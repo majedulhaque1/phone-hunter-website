@@ -12,6 +12,19 @@
 </head>
 <body>
     <h1 class="text-center text-primary my-5">Phone Galaxy</h1>
+    <!-- search box start here -->
+    <div class="input-group w-50 mx-auto mb-5">
+        <input id="search-value" type="text" class="form-control" placeholder="Search phone">
+        <button onclick="loadPhones()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+    <!-- search box end here -->
+
+    <!-- search items start here -->
+    <div class="container">
+        <div id="phones" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        </div>
+    </div>
+    <!-- search items end here -->
     <script src="js/app.js"></script>
 </body>
 </html>
