@@ -74,6 +74,7 @@ const displayPhoneDetails = (phoneIdData) =>{
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Display-Size:</span>${phoneIdData.mainFeatures.displaySize}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Chipset:</span>${phoneIdData.mainFeatures.chipSet}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Memory:</span>${phoneIdData.mainFeatures.memory}</p>
+            <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Sensors:</span>${phoneIdData.mainFeatures.sensors}</p>
             <h3 class="custom-text-style card-title mb-3">Others:</h3>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Blutooth:</span>${phoneIdData?.others?.Bluetooth ? phoneIdData.others.Bluetooth:'no result found'}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">GPS:</span>${phoneIdData?.others?.GPS ? phoneIdData.others.GPS:'no result found'}</p>
