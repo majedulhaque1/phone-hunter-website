@@ -3,17 +3,21 @@ const loadPhones = async () =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     const searchTextValue = searchText.toLowerCase();
+    displaySpinner('block');
     searchField.value ='';
-    
     // get phone API
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchTextValue}`;
     const res = await fetch(url);
     const data = await res.json();
     displayPhones(data.data);
+    
 }
 // show display phones
+// add spinner
+const displaySpinner = (displayStyle) =>{
+    document.getElementById('spinner').style.display = displayStyle;
+}
 const displayPhones = (phonesData) =>{
-    console.log(phonesData.length);
     if(phonesData.length == 0){
         document.getElementById('empty-field').style.display ='block';
     }
@@ -40,8 +44,8 @@ const displayPhones = (phonesData) =>{
             </div>
             `;
             phones.appendChild(div);
-            
         });
+        displaySpinner('none');
     }
 }
 // load phone details
@@ -62,15 +66,15 @@ const displayPhoneDetails = (phoneIdData) =>{
     <div id="phone-details-card" class="card custom-card-details-style border-0 p-3 shadow-lg mx-auto">
         <img src="${phoneIdData.image}" class="card-img-top p-3" alt="">
         <div class="card-body">
-            <p class="card-text fs-2">${phoneIdData.name}</p>
-            <h3 class="card-title fs-5">Brand: ${phoneIdData.brand}</h3>
+            <p class="custom-text-style card-text fs-2">${phoneIdData.name}</p>
+            <h3 class="card-title fs-5"><span class="custom-text-style">Brand: ${phoneIdData.brand}</span></h3>
             <p class="card-text fs-5">Release Date: ${phoneIdData.releaseDate ? phoneIdData.releaseDate: 'Release date not found'}</p>
-            <h3 class="card-title mb-3">Main Features:</h3>
+            <h3 class="custom-text-style card-title mb-3">Main Features:</h3>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Storage:</span>${phoneIdData.mainFeatures.storage}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Display-Size:</span>${phoneIdData.mainFeatures.displaySize}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Chipset:</span>${phoneIdData.mainFeatures.chipSet}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Memory:</span>${phoneIdData.mainFeatures.memory}</p>
-            <h3 class="card-title mb-3">Others:</h3>
+            <h3 class="custom-text-style card-title mb-3">Others:</h3>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">Blutooth:</span>${phoneIdData?.others?.Bluetooth ? phoneIdData.others.Bluetooth:'no result found'}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">GPS:</span>${phoneIdData?.others?.GPS ? phoneIdData.others.GPS:'no result found'}</p>
             <p class="pe-2 fs-normal"><span class="fs-6 pe-2 fw-bold">NFC:</span>${phoneIdData?.others?.NFC ? phoneIdData.others.NFC:'no result found'}</p>

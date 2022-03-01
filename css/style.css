@@ -1,5 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
 #empty-field{
     display: none;
+}
+#spinner{
+    display: none;
+    z-index: 1;
 }
 .custom-text-style{
     color: #33ccff;
@@ -29,7 +41,7 @@
 @media only screen and (max-width: 600px) {
     .custom-card-details-style{
         width: 100%;
-        margin: 0 auto;
+        margin: 0 20px;
     }
 }
 @media only screen and (min-width: 768px) {

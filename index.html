@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="text-center custom-text-style my-5">Phone Galaxy</h1>
+    <h1 class="text-center custom-text-style my-5">Phone Finder</h1>
     <!-- search box start here -->
     <div class="input-group search-box-style mx-auto px-4 mb-5">
         <input id="search-field" type="text" class="form-control" placeholder="Search phone">
@@ -19,7 +19,11 @@
     </div>
     <p id="empty-field" class="text-center text-danger">No result found</p>
     <!-- search box end here -->
-
+    <div  class="d-flex justify-content-center align-items-center h-100">
+        <div id="spinner" class="spinner-border text-info" role="status">
+        </div>
+    </div>
+    
     <!-- phone details start here -->
     <div id="phone-details" class="row row-cols-1 g-4">
     </div>
