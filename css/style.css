@@ -6,7 +6,7 @@
 body{
     overflow-x: hidden;
 }
-#empty-field{
+#error-message{
     display: none;
 }
 #spinner{
