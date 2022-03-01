@@ -12,11 +12,11 @@ const loadPhones = async () =>{
     displayPhones(data.data);
     
 }
-// show display phones
 // add spinner
 const displaySpinner = (displayStyle) =>{
     document.getElementById('spinner').style.display = displayStyle;
 }
+// show display phones
 const displayPhones = (phonesData) =>{
     if(phonesData.length == 0){
         document.getElementById('empty-field').style.display ='block';
