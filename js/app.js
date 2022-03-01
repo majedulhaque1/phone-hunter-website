@@ -19,10 +19,10 @@ const displaySpinner = (displayStyle) =>{
 // show display phones
 const displayPhones = (phonesData) =>{
     if(phonesData.length == 0){
-        document.getElementById('empty-field').style.display ='block';
+        document.getElementById('error-message').style.display ='block';
     }
     else{
-        document.getElementById('empty-field').style.display ='none';
+        document.getElementById('error-message').style.display ='none';
     }
 
     if(phonesData.length = 20){
